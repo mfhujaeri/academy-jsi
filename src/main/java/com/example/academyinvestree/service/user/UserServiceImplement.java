@@ -93,6 +93,11 @@ public class UserServiceImplement implements UserService{
     }
 
     @Override
+    public Response getalluser(User user) {
+        return null;
+    }
+
+    @Override
     public int resetPassword(User user) {
         return 0;
     }
