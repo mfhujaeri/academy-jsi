@@ -8,9 +8,6 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.sql.Timestamp;
 
 @Service("UserServiceImplement")
@@ -94,7 +91,7 @@ public class UserServiceImplement implements UserService{
 
     @Override
     public Response getalluser(User user) {
-        return null;
+        return user;
     }
 
     @Override
