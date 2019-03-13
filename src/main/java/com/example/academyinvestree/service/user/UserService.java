@@ -1,10 +1,11 @@
 package com.example.academyinvestree.service.user;
 
 import com.example.academyinvestree.model.User;
+import com.example.academyinvestree.model.response.Response;
 
 public interface UserService {
-    int registerUsers(User user);
-    int login(User user);
+    Response registerUsers(User user);
+    Response login(User user);
     int resetPassword(User user);
     int editUser(Long id,User user);
     int logout(Long id);

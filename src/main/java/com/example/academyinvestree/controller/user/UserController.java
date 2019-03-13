@@ -1,8 +1,12 @@
 package com.example.academyinvestree.controller.user;
 
 import com.example.academyinvestree.model.User;
+import com.example.academyinvestree.model.response.MetaResponse;
+import com.example.academyinvestree.model.response.Response;
 import com.example.academyinvestree.service.user.UserService;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,9 +22,18 @@ public class UserController  {
         this.userService = userService;
     }
 
+
     @PostMapping(value = "/register")
-    public int register(@RequestBody User user){
-        int register = userService.registerUsers(user);
-        return register;
+    public ResponseEntity register(@RequestBody User user){
+        Response register = userService.registerUsers(user);
+
+        return new ResponseEntity(register, HttpStatus.CREATED);
+    }
+
+    @PostMapping(value = "/login")
+    public ResponseEntity login(@RequestBody User user){
+        Response login = userService.login(user);
+
+        return new ResponseEntity(login, HttpStatus.OK);
     }
 }

@@ -19,6 +19,7 @@ public class User {
     private Date updated_at;
     private Date deleted_at;
     private int status ;
+    private Integer is_login ;
 
     public long getId() {
         return id;
@@ -90,5 +91,13 @@ public class User {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    public int getIs_login() {
+        return is_login;
+    }
+
+    public void setIs_login(int is_login) {
+        this.is_login = is_login;
     }
 }
