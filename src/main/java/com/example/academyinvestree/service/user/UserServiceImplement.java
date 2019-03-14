@@ -90,7 +90,7 @@ public class UserServiceImplement implements UserService{
     }
 
     @Override
-    public Response getalluser(User user) {
+    public User getalluser(User user) {
         return user;
     }
 
