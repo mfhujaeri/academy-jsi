@@ -36,11 +36,10 @@ public class UserController  {
         return new ResponseEntity(login, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/getalluser")
-    public ResponseEntity getAllUser(User user) {
-        Response getalluser = userService.getalluser(user);
-
-        return new ResponseEntity(getalluser, HttpStatus.OK);
+    @GetMapping(value ="/show/profile/{id}")
+    public ResponseEntity showProfile(@PathVariable("id") Long id){
+        User user = userService.showProfile(id);
+        return new ResponseEntity(user, HttpStatus.OK);
     }
 
 }

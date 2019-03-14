@@ -90,11 +90,6 @@ public class UserServiceImplement implements UserService{
     }
 
     @Override
-    public User getalluser(User user) {
-        return user;
-    }
-
-    @Override
     public int resetPassword(User user) {
         return 0;
     }
@@ -111,6 +106,7 @@ public class UserServiceImplement implements UserService{
 
     @Override
     public User showProfile(Long id) {
-        return null;
+        User dataUser = userRepository.findById(id).orElse(null);
+        return dataUser;
     }
 }
